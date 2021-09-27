@@ -1,0 +1,21 @@
+version: '3.7'
+
+services:
+  fastapicore:
+    container_name: clinto-chat
+    build:
+      context: .
+    env_file:
+      - ./env/fastapi.env
+    # command: uvicorn main:app --host 0.0.0.0 --port 8000 --reload
+    volumes:
+      - .:/app
+    ports:
+      - "8001:80"
+    restart: always
+  #  command: ./start-reload.sh
+  #   tty: true
+  
+
+
+
