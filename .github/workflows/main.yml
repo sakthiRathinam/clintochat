@@ -21,6 +21,9 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
       - name: DockerBuild
+        env:
+          DOCKER_HUB: ${{ secrets.DOCKER_HUB }}
+          DOCKER_ACCESS: ${{ secrets.DOCKER_ACCESS }}
         run: |
           ls -l
           echo 'Docker Login'
