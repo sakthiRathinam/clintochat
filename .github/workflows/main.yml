@@ -24,5 +24,11 @@ jobs:
         run: |
           ls -l
           echo 'Docker Login'
-          echo 'First test'
+          docker login -u $DOCKER_HUB -p $DOCKER_ACCESS
+          echo 'Running build'
+          docker build . -t sakthiratnam/fastapichat:latest
+          echo 'pushing image'
+          docker push sakthiratnam/fastapichat:latest
+          echo 'done'
+          
           
