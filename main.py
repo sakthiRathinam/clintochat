@@ -34,6 +34,7 @@ app.add_middleware(
 )
 
 print("new")
+print("new")
 
 
 # @app.on_event("shutdown")

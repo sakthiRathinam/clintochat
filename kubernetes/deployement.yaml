@@ -3,10 +3,12 @@ kind: Deployment
 metadata:
   name: chat
   labels:
-    name: "chat"
-  namespace: default
+    app: chat
+    keel.sh/trigger: poll
+    keel.sh/policy: "force"
+    keel.sh/match-tag: "true"
   annotations:
-    keel.sh/policy: all
+    keel.sh/pollSchedule: "@every 1m"
 spec:
   replicas: 1
   selector: 
