@@ -1,7 +1,9 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: chat-deployment
+  name: chat
+  labels:
+    name: "chat"
   namespace: default
   annotations:
     keel.sh/policy: all

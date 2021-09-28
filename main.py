@@ -23,7 +23,7 @@ app.mount("/static", StaticFiles(directory="static"), name="static")
 # app.mount("/media", StaticFiles(directory="media"), name="media")
 app.add_middleware(
     TrustedHostMiddleware, allowed_hosts=[
-        "192.168.29.98", '192.168.29.12', '192.168.29.242', 'localhost', '127.0.0.1']
+        "192.168.29.98", '192.168.29.12', '192.168.29.242', 'localhost', '127.0.0.1',"*"]
 )
 app.add_middleware(
     CORSMiddleware,
@@ -32,6 +32,8 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+print("new")
 
 
 # @app.on_event("shutdown")
