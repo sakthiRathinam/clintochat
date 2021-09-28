@@ -24,11 +24,13 @@ jobs:
         env:
           DOCKER_HUB: ${{ secrets.DOCKER_HUB }}
           DOCKER_ACCESS: ${{ secrets.DOCKER_ACCESS }}
+          RELEASE_VERSION: ${{ steps.vars.outputs.tag }}
         run: |
           ls -l
           echo 'Docker Login'
           docker login -u $DOCKER_HUB -p $DOCKER_ACCESS
           echo 'Running build'
+          echo $RELEASE_VERSION
           docker build . -t sakthiratnam/fastapichat:latest
           echo 'pushing image'
           docker push sakthiratnam/fastapichat:latest
