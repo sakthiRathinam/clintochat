@@ -2,6 +2,9 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: chat-deployment
+  namespace: default
+  annotations:
+    keel.sh/policy: all
 spec:
   replicas: 1
   selector: 
@@ -15,5 +18,6 @@ spec:
       containers:
         - name: chat
           image: sakthiratnam/fastapichat:latest
+          imagePullPolicy: Always            
           ports:
             - containerPort: 80
