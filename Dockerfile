@@ -1,5 +1,5 @@
-FROM python:3.9.7-slim-buster as devstage
-# FROM tiangolo/uvicorn-gunicorn-fastapi:python3.9
+# FROM python:3.9.7-slim-buster as devstage
+FROM tiangolo/uvicorn-gunicorn-fastapi:python3.9
 ENV PYTHONUNBUFFERED=1
 WORKDIR /app
 # RUN apk update && apk add postgresql-dev gcc python3-dev musl-dev

@@ -7,12 +7,12 @@ services:
       context: .
     env_file:
       - ./env/fastapi.env
-    command: gunicorn -w 1 -k uvicorn.workers.UvicornWorker main:app --bind 0.0.0.0:8003
+    # command: gunicorn -w 1 -k uvicorn.workers.UvicornWorker main:app --bind 0.0.0.0:8003
     volumes:
       - .:/app
     ports:
-      - "8001:8003"
-      # - "8001:80"
+      # - "8001:8003"
+      - "8001:80"
     # restart: always
   #  command: ./start-reload.sh
   #   tty: true
