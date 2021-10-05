@@ -7,7 +7,7 @@ services:
       context: .
     env_file:
       - ./env/fastapi.env
-    command: uvicorn main:app --workers=2 --host 0.0.0.0 --port 8003 
+    command: gunicorn -w 1 -k uvicorn.workers.UvicornWorker main:app --bind 0.0.0.0:8003
     volumes:
       - .:/app
     ports:
